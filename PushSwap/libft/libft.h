@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 05:27:25 by akaabi            #+#    #+#             */
-/*   Updated: 2023/05/31 13:59:54 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/01 18:06:25 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
+# include <limits.h>
 # include <unistd.h>
 
 // typedef struct s_list
@@ -42,7 +43,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t c, size_t s);
-int		ft_atoi(const char *str);
+long		ft_atoi(const char *str);
 char	*ft_strdup(const char *string);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_strncmp(const char *s1, const char *s2, size_t c);

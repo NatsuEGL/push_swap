@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:06:39 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/01 09:25:20 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/01 19:09:27 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,31 @@ int check_empty(char *av, char c)
 	}
 	return (1);
 }
-void    print_nodes(t_list *arg)
-{
-    t_list    *current;
 
-    current = arg;
-    while (current != NULL)
+void    print_nodes(t_list *stack_a, t_list *stack_b, int size)
+{
+      printf("------Start-----\n");
+    while (size)
     {
-        printf("[%d]\n", current->content);
-        current = current->next;
+        if (stack_a)
+        {
+            printf("%d\t", stack_a->content);
+            stack_a = stack_a->next;
+        }
+        else
+        {
+            printf("  |   \t");
+        }
+        if (stack_b)
+        {
+            printf("%d", stack_b->content);
+            stack_b = stack_b->next;
+        }
+        size--;
+        printf("\n");
     }
+    printf("-\t-\na\tb\n");
+    printf("------End-----\n");
 }
 
 int main(int ac, char **av)
@@ -73,6 +88,7 @@ int main(int ac, char **av)
 	char	**s;
 	int		i;
 	t_list *a;
+	t_list *b;
 	
 	i = 0;
 	if (!ac)
@@ -80,20 +96,23 @@ int main(int ac, char **av)
 	p = check_string(ac, av);
 	s = ft_split(p, 32);
 	free(p);
+	
 	if (empty_check(&av[i]) != 1)
 		return (0);
 	if (the_signe(s) != 1)
 		return (0);
 	if (degit_check(s) != 1)
 		return (0);
+	for(int i = 0; s[i]; i++)
+	{
+		check_max_int(s[i]);
+	}
 	if (dublication(s) != 1)
 		return (0);
-	if_atoi(s);
-	a = push(s);
-	print_nodes(a);
-	rotate_stacks(&a);
-	printf("---------------\n");
-	print_nodes(a);
+	a = fill_stack(s);
+	push(&a,&b);
+	push(&a,&b);
+	print_nodes(a,b,6);
 	llocation(s);
 	return (0);
 }

@@ -6,17 +6,17 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 23:28:38 by akaabi            #+#    #+#             */
-/*   Updated: 2023/05/31 10:41:37 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/01 18:25:39 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		i;
-	size_t	r;
-	int		s;
+	long	r;
+	long	s;
 
 	i = 0;
 	r = 0;
@@ -34,9 +34,5 @@ int	ft_atoi(const char *str)
 		r = r * 10 + (str[i] - '0');
 		i++;
 	}
-	if (r > 2147483647 && s == 1)
-		return (0);
-	else if (r > 2147483648 && s == -1)
-		return (0);
 	return (r * s);
 }

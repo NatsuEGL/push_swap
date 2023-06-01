@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:53:31 by akaabi            #+#    #+#             */
-/*   Updated: 2023/05/31 15:11:56 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/01 10:55:45 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 }
 
-t_list	*push(char **c)
+t_list	*fill_stack(char **c)
 {
 	t_list *n;
 	t_list *s;
@@ -71,19 +71,11 @@ t_list	*push(char **c)
 	return (s);
 }
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int		count;
-	t_list	*ptr;
-
-	count = 0;
-	if (lst == NULL)
-		return (0);
-	ptr = lst;
-	while (ptr != NULL)
+	if (lst && new)
 	{
-		count++;
-		ptr = ptr->next;
+		new->next = *lst;
+		*lst = new;
 	}
-	return (count);
 }

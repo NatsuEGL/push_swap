@@ -6,7 +6,7 @@
 #    By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 21:38:42 by akaabi            #+#    #+#              #
-#    Updated: 2023/03/08 11:25:56 by akaabi           ###   ########.fr        #
+#    Updated: 2023/06/01 10:54:15 by akaabi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,13 +53,13 @@ SOURCE = ft_isalpha.c \
             ft_strmapi.c \
             ft_split.c
             
-bonus_part = ft_lstnew.c \
-            ft_lstadd_front.c \
-            ft_lstsize.c \
-            ft_lstlast.c \
-            ft_lstadd_back.c \
-            ft_lstdelone.c \
-            ft_lstclear.c \
+# bonus_part = ft_lstnew.c \
+#             ft_lstadd_front.c \
+#             ft_lstsize.c \
+#             ft_lstlast.c \
+#             ft_lstadd_back.c \
+#             ft_lstdelone.c \
+#             ft_lstclear.c \
             
 OBJECTS    = $(SOURCE:.c=.o)
 

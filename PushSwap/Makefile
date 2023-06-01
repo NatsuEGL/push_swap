@@ -6,7 +6,7 @@
 #    By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 11:06:45 by akaabi            #+#    #+#              #
-#    Updated: 2023/06/01 08:42:50 by akaabi           ###   ########.fr        #
+#    Updated: 2023/06/01 10:55:31 by akaabi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,8 @@ libfto = libft/*.o
 SRC = push_swap1.c  \
 		parsing.c \
 		more_utils.c \
-		more_utils2.c \
+		more_utils2.c 
 		
-
 OBJECTS = $(SRC:.c=.o)
 
 all: $(NAME)

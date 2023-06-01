@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:06:43 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/01 09:25:13 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/01 18:16:05 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_list
 	struct s_list *next;
 } t_list;
 
+void	check_max_int(char *str);
+
 void	if_atoi(char **s);
 int degit_check(char **s);
 int the_signe(char **s);
@@ -37,8 +39,10 @@ int check_empty(char *av, char c);
 int empty_check(char **s);
 int dublication(char **s);
 void	llocation(char **s);
-t_list	*push(char **c);
-int	ft_lstsize(t_list *lst);
+t_list	*fill_stack(char **c);
 void swap_stacks(t_list **stack);
 void rotate_stacks(t_list **stack);
+void rev_rotate(t_list **stack);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void push(t_list **stack_a, t_list **stack_b);
 #endif
