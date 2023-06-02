@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 08:42:56 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/01 19:02:25 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/02 11:48:24 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void rev_rotate(t_list **stack)
 	}
 }
 
-void push(t_list **stack_a, t_list **stack_b, char *str)
+void push(t_list **stack_a, t_list **stack_b)
 {
 	if ((*stack_a) != NULL)
 	{
@@ -73,6 +73,5 @@ void push(t_list **stack_a, t_list **stack_b, char *str)
 
 		(*stack_a) = (*stack_a)->next;
 		ft_lstadd_front(&(*stack_b),tmp);
-		ft_putstr(str);
 	}
 }

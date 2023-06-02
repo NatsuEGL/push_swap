@@ -6,27 +6,27 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 05:59:15 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/01 19:09:15 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/02 11:51:29 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_max_int(char *str)
+void	check_max_min(char *str)
 {
-	long	a;
-	int		x;
+	long	i;
+	int		s;
 
-	x = 0;
-	a = ft_atoi(str);
-	while (str[x] == '0')
-		x++;
-	if (a > INT_MAX || a < INT_MIN)
+	s = 0;
+	i = ft_atoi(str);
+	while (str[s] == '0')
+		s++;
+	if (i > INT_MAX || i < INT_MIN)
 	{
 		write(2, "Error\n", 6);
 		exit(1);
 	}
-	else if (ft_strlen(str + x) > ft_strlen("+2147483647"))
+	else if (ft_strlen(str + s) > ft_strlen("+2147483647"))
 	{
 		write(2, "Error\n", 6);
 		exit(1);

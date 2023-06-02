@@ -6,23 +6,22 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:53:31 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/01 10:55:45 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/02 12:06:18 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	llocation(char **s)
+void loop(char **s)
 {
-	int	t;
+	int i;
 
-	t = 0;
-	while (s[t])
+	i = 0;
+	while(s[i])
 	{
-		free(s[t]);
-		t++;
+		check_max_min(s[i]);
+		i++;
 	}
-	free(s);
 }
 
 t_list	*ft_lstneww(int s)
@@ -34,7 +33,7 @@ t_list	*ft_lstneww(int s)
 		return (0);
 	p -> content = s;
 	// p -> index = 0;
-	// p -> position = 0;
+	p -> position = 0;
 	p -> next = NULL;
 	return (p);
 }
