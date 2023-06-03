@@ -6,7 +6,7 @@
 #    By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 11:06:45 by akaabi            #+#    #+#              #
-#    Updated: 2023/06/02 15:39:36 by akaabi           ###   ########.fr        #
+#    Updated: 2023/06/03 18:01:34 by akaabi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,15 @@ SRC = push_swap1.c  \
 		instractions.c \
 		instractions2.c \
 		sorting.c \
+		sorting2.c \
+		for_norm.c \
 		
 OBJECTS = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME) : $(OBJECTS) push_swap.h
-	@make -C $(libft)
+	@make  -s -C $(libft)
 	$(CC) $(CFLAGS)  $(libft_a) $(OBJECTS) -o $(NAME)
 
 %.o : %.c

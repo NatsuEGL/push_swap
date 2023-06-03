@@ -6,13 +6,13 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:53:31 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/02 12:06:18 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/03 18:22:27 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void loop(char **s)
+int loop(char **s)
 {
 	int i;
 
@@ -22,6 +22,7 @@ void loop(char **s)
 		check_max_min(s[i]);
 		i++;
 	}
+	return (1);
 }
 
 t_list	*ft_lstneww(int s)

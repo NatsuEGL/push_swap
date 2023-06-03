@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 12:37:25 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/02 12:56:27 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/03 17:12:22 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void push_a(t_list **a, t_list **b)
 	write(1, "pa\n", 3);
 }
 
-void push_b(t_list **a, t_list **b)
+void push_b(t_list **b, t_list **a)
 {
 	push(b,a);
 	write(1, "pb\n", 3);

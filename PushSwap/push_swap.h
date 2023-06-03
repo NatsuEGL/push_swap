@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:06:43 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/02 18:08:11 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/03 18:39:42 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	check_signe(char c);
 int check_digit(char c);
 int check_empty(char *av, char c);
 //more_utils.c
-void	loop(char **s);
+int	loop(char **s);
 t_list	*fill_stack(char **c);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 //more_utils2.c
@@ -58,9 +58,16 @@ void rotate_b(t_list **b);
 void rrotate_a(t_list **a);
 void rrotate_b(t_list **b);
 //sorting.c
-// int position_max(t_list **s);
-// int checking_max(t_list *s);
+int position_min(t_list **s, int *min);
+int checking_min(t_list **s);
 void sorting_3(t_list **s);
-void index_incremention(t_list **s);
-void ranking(t_list **s);
+// void position_incremention(t_list **s);
+void indexing(t_list **s);
+//sorting2.c
+void sorting_5(t_list **a, t_list **b);
+int	ft_lstsize(t_list *lst);
+void sorting_4(t_list **a, t_list **b);
+//for_norm.c
+int returning(char **av, char **s);
+void arg(int ac ,t_list **a, t_list **b);
 #endif
