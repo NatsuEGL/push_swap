@@ -6,7 +6,7 @@
 #    By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 11:06:45 by akaabi            #+#    #+#              #
-#    Updated: 2023/06/03 18:01:34 by akaabi           ###   ########.fr        #
+#    Updated: 2023/06/04 13:39:44 by akaabi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = push_swap1.c  \
 		instractions2.c \
 		sorting.c \
 		sorting2.c \
+		sorting3.c \
 		for_norm.c \
 		
 OBJECTS = $(SRC:.c=.o)

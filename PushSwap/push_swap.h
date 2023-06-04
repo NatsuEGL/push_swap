@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:06:43 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/03 18:39:42 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/04 15:50:40 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,11 @@ void sorting_4(t_list **a, t_list **b);
 //for_norm.c
 int returning(char **av, char **s);
 void arg(int ac ,t_list **a, t_list **b);
+//sorting3.c
+void push_bzaf(t_list **a, t_list **b);
+int position_max(t_list **s , int *max);
+int checking_max(t_list **s);
+void sorting_bzaf(t_list **a, t_list **b);
+void sorting_bzaff(t_list **a, t_list **b);
+void split_and_push(t_list **a, t_list **b);
 #endif

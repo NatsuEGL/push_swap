@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:39:33 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/03 17:37:54 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/03 19:32:44 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int position_min(t_list **s , int *min)
         current = current->next;
         i++;
     }
-	// current->position = position;
-	// printf("%d\n",position);
 	return (position);
 }
 
@@ -74,6 +72,8 @@ void sorting_3(t_list **s)
 	}
 	else if (a->index == 2 && b->index == 0 && c->index == 1)
 		rotate_a(s);
+	else if (a->index == 0 && b->index == 1 && c->index == 2)
+		return ;
 	else 
 		rrotate_a(s);
 }

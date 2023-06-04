@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:06:39 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/03 19:01:17 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/04 16:33:03 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,12 @@ int main(int ac, char **av)
 	if (returning(av,s) != 1)
 		return (0);
 	a = fill_stack(s);
-	arg(ac,&a,&b);
-	print_nodes(a, b,5);
+	// arg(ac,&a,&b);
+	indexing(&a);
+	// print_nodes(a, b,9);
+	indexing(&a);
+	push_bzaf(&a,&b);
+	sorting_bzaf(&a, &b);
+	// print_nodes(a, b,9);
 	return (0);
 }
