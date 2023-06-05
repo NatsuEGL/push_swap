@@ -6,13 +6,13 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 05:05:44 by akaabi            #+#    #+#             */
-/*   Updated: 2023/03/08 13:38:09 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/05 13:58:56 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char  *s1, char  *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		str1;
 	int		str2;

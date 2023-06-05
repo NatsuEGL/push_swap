@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting2.c                                         :+:      :+:    :+:   */
+/*   sorting2_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 14:54:54 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 12:45:12 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 08:18:25 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 13:03:52 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	sorting_5(t_list **a, t_list **b)
 {
-	int	position;
-	int	min;
+	int		position;
+	int		min;
 
 	min = 0;
 	position = position_min(a, &min);

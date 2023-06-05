@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   more_utils2.c                                      :+:      :+:    :+:   */
+/*   more_utils2_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 08:42:56 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 12:40:45 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 08:13:44 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 13:00:11 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	swap_stacks(t_list **stack)
 {
@@ -18,7 +18,7 @@ void	swap_stacks(t_list **stack)
 	t_list	*second;
 
 	if ((*stack) != NULL && (*stack)->next != NULL)
-	{
+	{	
 		first = (*stack);
 		second = (*stack)->next;
 		first->next = second->next;
@@ -65,7 +65,7 @@ void	rev_rotate(t_list **stack)
 
 void	push(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*tmp;
+	t_list	*tmp;	
 
 	if ((*stack_a) != NULL)
 	{

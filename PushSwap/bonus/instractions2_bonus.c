@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   instractions2_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 22:49:59 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 13:59:08 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 08:15:15 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 12:57:39 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap_bonus.h"
 
-// void	ft_lstadd_back(t_list **lst, t_list *new)
-// {
-// 	t_list	*p;
-// 	if (*lst)
-// 	{
-// 		p = *lst;
-// 		while (p->next)
-// 			p = p -> next;
-// 		p->next = new;
-// 	}
-// 	else
-// 		*lst = new;
-// }
+void	rotate_b(t_list **b)
+{
+	rotate_stacks(b);
+}
+
+void	rrotate_a(t_list **a)
+{
+	rev_rotate(a);
+}
+
+void	rrotate_b(t_list **b)
+{
+	rev_rotate(b);
+}

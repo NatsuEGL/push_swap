@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   more_utils.c                                       :+:      :+:    :+:   */
+/*   more_utils_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 12:53:31 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 12:47:59 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 08:12:35 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 12:58:25 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	loop(char **s)
 {
@@ -58,8 +58,8 @@ t_list	*fill_stack(char **c)
 	t_list	*s;
 	int		i;
 
-	s = NULL;
 	i = 0;
+	s = NULL;
 	while (c[i])
 	{
 		n = ft_lstneww(ft_atoi(c[i]));

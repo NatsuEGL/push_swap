@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   sorting_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 14:39:33 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 12:44:47 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 08:17:30 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 13:03:29 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	checking_min(t_list **s)
 {
@@ -22,7 +22,7 @@ int	checking_min(t_list **s)
 	while (current != NULL)
 	{
 		if (current->index < min)
-		min = current->index;
+			min = current->index;
 		current = current->next;
 	}
 	return (min);

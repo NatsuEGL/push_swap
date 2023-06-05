@@ -6,15 +6,21 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 05:27:25 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/01 18:06:25 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/05 13:59:36 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
+
+# include <unistd.h>
 # include <string.h>
+# include <stdlib.h>
+# include <fcntl.h>
 # include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
@@ -43,14 +49,14 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t c, size_t s);
-long		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 char	*ft_strdup(const char *string);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-int		ft_strncmp(const char *s1, const char *s2, size_t c);
+int		ft_strncmp(char *s1, char *s2, size_t c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(const char *h, const char *n, size_t c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char  *s1, char  *s2);
+char	*ft_strjoin(char *s1, char *s2);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_fd(char *s, int fd);
@@ -67,5 +73,10 @@ char	**ft_split(char const *s, char c);
 // int		ft_lstsize(t_list *lst);
 // void	ft_lstdelone(t_list *lst, void (*del)(void*));
 // void	ft_lstclear(t_list **lst, void (*del)(void*));
+size_t	ft_checkc(char *s, int c);
+char	*ft_readp(int fd, char *str);
+char	*get_next_line(int fd);
+char	*ft_uppdate(char *str);
+char	*ft_ret1(char *str);
 
 #endif

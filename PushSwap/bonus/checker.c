@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap1.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 11:06:39 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 14:55:20 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 07:56:28 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 15:24:54 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 char	*check_string(int ac, char **av)
 {
@@ -59,14 +59,16 @@ int	check_empty(char *av, char c)
 int	main(int ac, char **av)
 {
 	char	*p;
-	int		i;
+	t_var	*h;
 	char	**s;
 	t_list	*a;
 	t_list	*b;
 
+	h = malloc(sizeof(t_var));
+	if (!h)
+		return (0);
 	if (ac < 2)
 		return (0);
-	i = 0;
 	b = NULL;
 	p = check_string(ac, av);
 	s = ft_split(p, 32);
@@ -74,9 +76,8 @@ int	main(int ac, char **av)
 	if (returning(av, s) != 1)
 		return (0);
 	a = fill_stack(s);
-	no_sort(&a);
-	arg(s, &a, &b);
-	allocation(s, i);
-	free_stacks(&a);
+	next_line_read(h, &a, &b);
+	write_ok_ko(a, b);
+	free_all(&a, &b, s, h);
 	return (0);
 }

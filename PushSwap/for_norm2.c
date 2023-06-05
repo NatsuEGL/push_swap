@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   for_norm2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 22:49:59 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 13:59:08 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 13:12:17 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 13:15:01 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-// void	ft_lstadd_back(t_list **lst, t_list *new)
-// {
-// 	t_list	*p;
-// 	if (*lst)
-// 	{
-// 		p = *lst;
-// 		while (p->next)
-// 			p = p -> next;
-// 		p->next = new;
-// 	}
-// 	else
-// 		*lst = new;
-// }
+void	more_arg(char **s, t_list **a, t_list **b)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	if (i == 4)
+	{
+		indexing(a);
+		sorting_4(a, b);
+		indexing(a);
+		sorting_3(a);
+		push_a(b, a);
+	}
+	else
+	{
+		indexing(a);
+		sorting_bzaf(a, b);
+	}
+}

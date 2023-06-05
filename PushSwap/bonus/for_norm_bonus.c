@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   for_norm.c                                         :+:      :+:    :+:   */
+/*   for_norm_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 17:56:14 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 14:56:19 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/05 08:26:18 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/05 14:37:21 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	returning(char **av, char **s)
 {
@@ -52,45 +52,38 @@ void	arg(char **s, t_list **a, t_list **b)
 		indexing(a);
 		sorting_3(a);
 	}
-	else
-		more_arg(s, a, b);
+	else if (i == 4)
+		more_args(s, a, b);
 }
 
-void	no_sort(t_list **s)
+void	more_args(char **s, t_list **a, t_list **b)
 {
-	t_list	*a;
-	t_list	*b;
+	int	i;
 
-	a = (*s);
-	b = (*s)->next;
-	while (b)
-	{
-		if (a->index > b->index)
-			return ;
-		b = b->next;
-		a = a->next;
-	}
-}
-
-void	allocation(char **s, size_t i)
-{
+	i = 0;
 	while (s[i])
-	{
-		free(s[i]);
 		i++;
+	if (i == 4)
+	{
+		indexing(a);
+		sorting_4(a, b);
+		indexing(a);
+		sorting_3(a);
+		push_a(b, a);
 	}
-	free(s);
+	else
+	{
+		indexing(a);
+		sorting_bzaf(a, b);
+	}
 }
 
-void	free_stacks(t_list **s)
+int	ft_strcmp(char *s1, char *s2)
 {
-	t_list	*tmp;
-
-	tmp = *s;
-	while (tmp != NULL)
+	while (*s1 && (*s1 == *s2))
 	{
-		tmp = (*s)->next;
-		free(*s);
-		*s = tmp;
+		s1++;
+		s2++;
 	}
+	return (*s1 - *s2);
 }
