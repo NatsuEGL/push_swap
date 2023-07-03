@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:06:43 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 14:16:57 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/19 11:10:01 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+//parsing2.c
+int		checking_string(char *p, char c);
+int		atoi_check(char **p);
+int		ft_strcmp(char *s1, char *s2);
 //parsing.c
 void	check_max_min(char *str);
 int		degit_check(char **s);
@@ -68,13 +72,13 @@ int		ft_lstsize(t_list *lst);
 void	sorting_4(t_list **a, t_list **b);
 //for_norm2.c
 void	more_arg(char **s, t_list **a, t_list **b);
+void	more_args2(t_list **a, t_list **b);
 //for_norm.c
 int		returning(char **av, char **s);
 void	arg(char **s, t_list **a, t_list **b);
 void	no_sort(t_list **s);
 void	allocation(char **s, size_t i);
 void	free_stacks(t_list **s);
-void	free_split(char **split);
 //sorting3.c
 void	push_bzaf(t_list **a, t_list **b);
 int		position_max(t_list **s, int *max);

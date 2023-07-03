@@ -1,34 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   for_norm_bonus.c                                   :+:      :+:    :+:   */
+/*   parcing2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/05 08:26:18 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/18 22:03:03 by akaabi           ###   ########.fr       */
+/*   Created: 2023/06/17 12:48:01 by akaabi            #+#    #+#             */
+/*   Updated: 2023/06/19 11:10:50 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "push_swap.h"
 
-int	returning(char **av, char **s)
+int	checking_string(char *s, char c)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	if (empty_check(&av[i]) != 1)
-		return (0);
-	if (the_signe(s) != 1)
-		return (0);
-	if (degit_check(s) != 1)
-		return (0);
-	if (dublication(s) != 1)
-		return (0);
-	if (loop(s) != 1)
-		return (0);
-	if (!atoi_check(s))
-		return (0);
+	while (s[i])
+	{
+		if (s[i] != c)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	atoi_check(char **s)
+{
+	int	a;
+
+	a = 0;
+	while (s[a])
+	{
+		if (ft_atoi(s[a]) == 0 && (ft_strcmp(&s[a][0], "-0") == 0 \
+		|| ft_strcmp(&s[a][0], "+0") == 0))
+			return (1);
+		if (ft_atoi(s[a]) == 0 && checking_string(s[a], '0') == 0)
+		{
+			write(2, "Error\n", 6);
+			exit (1);
+		}
+		a++;
+	}
 	return (1);
 }
 

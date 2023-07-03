@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 08:01:19 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 14:46:42 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/18 12:36:25 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,20 @@ void	free_stacks(t_list **s)
 	}
 }
 
-int	no_sort(t_list **s)
+int	no_sort(t_list *s)
 {
-	t_list	*a;
 	t_list	*b;
 
-	a = (*s);
-	b = (*s)->next;
-	while (b)
+	if (s)
 	{
-		if (a->index > b->index)
-			return (0);
-		b = b->next;
-		a = a->next;
+		b = s->next;
+		while (b)
+		{
+			if (s->index > b->index)
+				return (0);
+			b = b->next;
+			s = s->next;
+		}
 	}
 	return (1);
 }
@@ -92,5 +93,8 @@ void	more_write_in(char *s, t_list **a, t_list **b)
 		rotate_b(b);
 	}
 	else
-		write(2, "Error \n", 6);
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 }

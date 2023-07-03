@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:06:39 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 14:55:20 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/18 22:14:18 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,11 @@ int	main(int ac, char **av)
 	if (returning(av, s) != 1)
 		return (0);
 	a = fill_stack(s);
+	indexing(&a);
 	no_sort(&a);
 	arg(s, &a, &b);
 	allocation(s, i);
 	free_stacks(&a);
+	free_stacks(&b);
 	return (0);
 }

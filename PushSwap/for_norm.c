@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:56:14 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 14:56:19 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/18 13:10:46 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	returning(char **av, char **s)
 		return (0);
 	if (loop(s) != 1)
 		return (0);
+	if (!atoi_check(s))
+		return (0);
 	return (1);
 }
 
@@ -37,15 +39,13 @@ void	arg(char **s, t_list **a, t_list **b)
 	i = 0;
 	while (s[i])
 		i++;
-	if (i == 5)
+	if (i == 1)
+		exit(0);
+	else if (i == 2)
 	{
+		no_sort(a);
 		indexing(a);
-		sorting_5(a, b);
-		sorting_5(a, b);
-		indexing(a);
-		sorting_3(a);
-		push_a(b, a);
-		push_a(b, a);
+		swap_a(a);
 	}
 	else if (i == 3)
 	{
@@ -58,18 +58,22 @@ void	arg(char **s, t_list **a, t_list **b)
 
 void	no_sort(t_list **s)
 {
-	t_list	*a;
 	t_list	*b;
+	t_list	*a;
 
-	a = (*s);
-	b = (*s)->next;
-	while (b)
+	if (*s)
 	{
-		if (a->index > b->index)
-			return ;
-		b = b->next;
-		a = a->next;
+		a = *s;
+		b = (*s)->next;
+		while (b)
+		{
+			if (a->index > b->index)
+				return ;
+			b = b->next;
+			a = a->next;
+		}
 	}
+	exit(0);
 }
 
 void	allocation(char **s, size_t i)

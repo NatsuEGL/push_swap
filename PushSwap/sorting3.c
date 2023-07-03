@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:31:06 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 12:47:21 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/15 15:26:53 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	sorting_bzaff(t_list **a, t_list **b)
 	int	position;
 	int	max;
 
-	max = 0;
 	while (*b)
 	{
 		position = position_max(b, &max);

@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:39:33 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 12:44:47 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/16 11:43:20 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ void	sorting_3(t_list **s)
 	a = (*s);
 	b = (*s)->next;
 	c = (*s)->next->next;
-	if (a->index == 1 && b->index == 0 && c->index == 2)
+	if (a->index == 2 && b->index == 0 && c->index == 1)
+		rotate_a(s);
+	else if (a->index == 1 && b->index == 0 && c->index == 2)
 		swap_a(s);
 	else if (a->index == 2 && b->index == 1 && c->index == 0)
 	{
@@ -69,8 +71,6 @@ void	sorting_3(t_list **s)
 		swap_a(s);
 		rotate_a(s);
 	}
-	else if (a->index == 2 && b->index == 0 && c->index == 1)
-		rotate_a(s);
 	else if (a->index == 0 && b->index == 1 && c->index == 2)
 		return ;
 	else

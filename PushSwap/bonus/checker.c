@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 07:56:28 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 15:24:54 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/18 21:46:01 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int	main(int ac, char **av)
 	t_list	*a;
 	t_list	*b;
 
+	if (ac < 2)
+		return (0);
 	h = malloc(sizeof(t_var));
 	if (!h)
-		return (0);
-	if (ac < 2)
 		return (0);
 	b = NULL;
 	p = check_string(ac, av);

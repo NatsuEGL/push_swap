@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:54:54 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 12:45:12 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/14 10:51:45 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	sorting_4(t_list **a, t_list **b)
 	int	position;
 	int	min;
 
-	min = 0;
 	position = position_min(a, &min);
 	if (position <= ft_lstsize(*a) / 2)
 	{

@@ -6,7 +6,7 @@
 #    By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 11:06:45 by akaabi            #+#    #+#              #
-#    Updated: 2023/06/05 14:00:42 by akaabi           ###   ########.fr        #
+#    Updated: 2023/06/18 11:51:28 by akaabi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ libft = libft/
 libft_a = libft/libft.a
 libfto = libft/*.o
 
-SRC = push_swap1.c  \
-		parsing.c \
+SRC = 	push_swap1.c  \
+		parcing.c \
+		parcing2.c \
 		more_utils.c \
 		more_utils2.c \
 		instractions.c \
@@ -33,14 +34,13 @@ SRC = push_swap1.c  \
 
 BNS = 	bonus/checker.c \
 		bonus/conditions_bonus.c \
-		bonus/parsing_bonus.c \
+		bonus/parcing_bonus.c \
+		bonus/parcing2_bonus.c \
 		bonus/more_utils_bonus.c \
 		bonus/more_utils2_bonus.c \
 		bonus/instractions_bonus.c \
 		bonus/instractions2_bonus.c \
 		bonus/sorting_bonus.c \
-		bonus/sorting2_bonus.c \
-		bonus/sorting3_bonus.c \
 		bonus/for_norm_bonus.c \
 		bonus/free_func.c \
 		
@@ -50,24 +50,24 @@ OBJECTSB = $(BNS:.c=.o)
 
 all: $(NAME)
 
-$(NAME) : $(OBJECTS) push_swap.h
-	@make  -s -C $(libft)
+$(NAME) : $(OBJECTS)
+	make  -s -C $(libft)
 	$(CC) $(CFLAGS)  $(libft_a) $(OBJECTS) -o $(NAME)
 	
 bonus : $(NAMEB)
 
 $(NAMEB): $(OBJECTSB) bonus/push_swap_bonus.h
-	@make  -s -C $(libft)
+	make  -s -C $(libft)
 	$(CC) $(CFLAGS)  $(libft_a) $(OBJECTSB) -o $(NAMEB)
 	
 
-%.o : %.c
+%.o : %.c push_swap.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJECTS) $(libfto) $(OBJECTSB)
+	@$(RM) $(OBJECTS) $(libfto) $(OBJECTSB)
 
 fclean: clean
-	$(RM) $(NAME) $(libfto) $(libft_a) $(NAMEB)
+	@$(RM) $(NAME) $(libfto) $(libft_a) $(NAMEB)
 
 re: fclean all

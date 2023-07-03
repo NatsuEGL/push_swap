@@ -6,7 +6,7 @@
 /*   By: akaabi <akaabi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:16:15 by akaabi            #+#    #+#             */
-/*   Updated: 2023/06/05 14:32:54 by akaabi           ###   ########.fr       */
+/*   Updated: 2023/06/18 13:07:30 by akaabi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,16 @@ void	free_all(t_list **a, t_list **b, char **s, t_var *h)
 
 void	write_ok_ko(t_list *a, t_list *b)
 {
-	if (no_sort(&a) == 1 || b)
+	if (no_sort(a) && !b)
+	{
 		write(1, "OK\n", 3);
+		exit(0);
+	}
 	else
+	{
 		write (2, "KO\n", 3);
+		exit(0);
+	}
 }
 
 void	next_line_read(t_var *h, t_list **a, t_list **b)
